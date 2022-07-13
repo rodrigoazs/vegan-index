@@ -20,27 +20,3 @@ repos:
         language: system
         entry: pipenv run black
         types: [python]
-
-      - id: bandit
-        name: bandit
-        stages: [push]
-        language: system
-        entry: pipenv run bandit -r api -c "pyproject.toml"
-        pass_filenames: false
-        types: [python]
-
-      - id: flake8
-        name: flake8
-        stages: [push]
-        language: system
-        entry: pipenv run flake8 api core
-        pass_filenames: false
-        types: [python]
-
-      - id: pylint
-        name: pylint
-        stages: [push]
-        language: system
-        entry: pipenv run pylint api core
-        pass_filenames: false
-        types: [python]

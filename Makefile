@@ -20,6 +20,3 @@ format:
 check:
 	pipenv run isort . -c
 	pipenv run black . --check
-	pipenv run bandit -r api -c "pyproject.toml"
-	pipenv run flake8 api core
-	pipenv run pylint api core
