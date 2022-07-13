@@ -1,9 +1,9 @@
 .PHONY: all tests clean
 
 install-dev:
-#	pip install pre-commit
-#	pre-commit install
-#	pre-commit install --hook-type pre-push
+	pip install pre-commit
+	pre-commit install
+	pre-commit install --hook-type pre-push
 	make build-dev
 
 build-dev:
