@@ -11,17 +11,17 @@ Vegan & Vegetarian Restaurants in South America
 South America (6682 listings)
 View all areas listed alphabetically
 
-Argentina 
-Bolivia 
-Brazil 
-Chile 
-Colombia 
-Ecuador 
-Guyana 
-Paraguay 
-Peru 
-Uruguay 
-Venezuela 
+Argentina
+Bolivia
+Brazil
+Chile
+Colombia
+Ecuador
+Guyana
+Paraguay
+Peru
+Uruguay
+Venezuela
 Also: Trinidad and Tobago
 
 For vegetarian organizations in South America, visit: IVU
@@ -106,4 +106,4 @@ def test_get_urls():
             </div>
             </div>"""
     urls = get_urls(html)
-    assert urls == [['Kenya', 'africa', 'kenya'], ['Liberia', 'africa', 'liberia']]
+    assert urls == [["Kenya", "africa", "kenya"], ["Liberia", "africa", "liberia"]]

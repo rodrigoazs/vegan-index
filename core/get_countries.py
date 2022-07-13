@@ -1,7 +1,7 @@
-import pandas as pd
 import time
-from utils import change_url, copy_text, get_countries, get_page_source, get_urls
 
+import pandas as pd
+from utils import change_url, copy_text, get_countries, get_page_source, get_urls
 
 CONTINENTS = [
     "https://www.happycow.net/north_america/",

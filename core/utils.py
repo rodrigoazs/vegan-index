@@ -1,5 +1,6 @@
 import re
 import time
+
 import pyautogui
 import pyperclip
 from bs4 import BeautifulSoup
