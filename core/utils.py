@@ -27,6 +27,7 @@ def copy_text():
 def change_url(url):
     pyautogui.moveTo(253, 97, duration=1, tween=pyautogui.easeInOutQuad)
     pyautogui.click()
+    print(url)
     pyautogui.write(url)
     pyautogui.press("enter")
     time.sleep(5)

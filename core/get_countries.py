@@ -15,23 +15,25 @@ CONTINENTS = [
 GET_STATES = [
     "https://www.happycow.net/north_america/usa",
     "https://www.happycow.net/north_america/canada/",
+    "https://www.happycow.net/oceania/australia/",
 ]
 
 time.sleep(10)
 
 countries = set()
+states = set()
 urls = []
-for continent in CONTINENTS:
-    change_url(continent)
-    countries = countries.union(set(get_countries(copy_text())))
+
+for country in GET_STATES:
+    change_url(country)
+    states = states.union(set(get_countries(copy_text())))
     source = get_page_source()
     urls.extend(get_urls(source))
     time.sleep(5)
 
-states = set()
-for country in GET_STATES:
-    change_url(country)
-    states = states.union(set(get_countries(copy_text())))
+for continent in CONTINENTS:
+    change_url(continent)
+    countries = countries.union(set(get_countries(copy_text())))
     source = get_page_source()
     urls.extend(get_urls(source))
     time.sleep(5)
