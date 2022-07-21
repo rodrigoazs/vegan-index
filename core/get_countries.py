@@ -12,6 +12,10 @@ CONTINENTS = [
     "https://www.happycow.net/africa/",
 ]
 
+GET_STATES = [
+    "https://www.happycow.net/north_america/usa",
+    "https://www.happycow.net/north_america/canada/",
+]
 
 time.sleep(10)
 
@@ -24,7 +28,17 @@ for continent in CONTINENTS:
     urls.extend(get_urls(source))
     time.sleep(5)
 
-df = pd.DataFrame(list(countries), columns=["name"])
+states = set()
+for country in GET_STATES:
+    change_url(country)
+    states = states.union(set(get_countries(copy_text())))
+    source = get_page_source()
+    urls.extend(get_urls(source))
+    time.sleep(5)
+
+
+new_set = (countries.difference(set(["Canada", "USA"]))).union(states)
+df = pd.DataFrame(list(new_set), columns=["name"])
 urls_df = pd.DataFrame(urls, columns=["name", "continent", "country"])
 df = df.merge(urls_df, how="left", on="name")
 df.to_csv("countries.csv")

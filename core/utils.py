@@ -53,7 +53,7 @@ def get_urls(html):
     for job_element in job_elements:
         a = job_element.find_all("a", href=True)
         href = a[0]["href"]
-        matches = re.search("^\/([a-z\-\_]*)\/([a-z\-\_]*)\/$", href)
+        matches = re.search("^\/([a-z\-\_]*)\/([a-z\-\_\/]*)\/$", href)
         continent = matches.groups()[0]
         country = matches.groups()[1]
         nes = job_element.find_all("div")
