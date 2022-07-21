@@ -11,6 +11,11 @@ def get_countries(text):
     return matches
 
 
+def get_cities(text):
+    matches = re.findall(r"([a-zA-Z\s\-]*)\(([0-9]*)\)", text.replace("\n", ""))
+    return matches
+
+
 def copy_text():
     pyautogui.move(0, 50)
     pyautogui.hotkey("command", "a")

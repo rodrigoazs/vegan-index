@@ -1,4 +1,4 @@
-from core.utils import get_countries, get_urls
+from core.utils import get_cities, get_countries, get_urls
 
 
 def test_get_countries():
@@ -82,6 +82,54 @@ Advertisement
         "Suriname",
         "Uruguay",
         "Venezuela",
+    ]
+
+
+def test_get_cities():
+    text = """Remember me
+Forgot Password?
+Login
+
+Vegan & Vegetarian Restaurants in South America
+ South America
+South America (6682 listings)
+View all areas listed alphabetically
+
+Argentina
+Bolivia
+Brazil
+Chile
+Colombia
+Ecuador
+Guyana
+Paraguay
+Peru
+Uruguay
+Venezuela
+Also: Trinidad and Tobago
+
+For vegetarian organizations in South America, visit: IVU
+
+All areas listed alphabetically
+VeganVegan
+VegetarianVegetarian
+VegFriendlyVeg-Options
+Chains
+Filters0
+Argentina
+(959)
+Bolivia
+(108)
+Brazil
+(2913)
+Share
+Advertisement
+"""
+    cities = get_cities(text)
+    assert cities == [
+        ("Argentina", "959"),
+        ("Bolivia", "108"),
+        ("Brazil", "2913"),
     ]
 
 
