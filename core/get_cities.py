@@ -44,5 +44,10 @@ for i in range(5):
         country = row.country
         change_url(URL.format(continent, country, _filter))
         text = copy_text()
+        if (
+            "Our systems have detected unusual traffic from your computer network"
+            not in text
+        ):
+            raise Exception(text)
         matches = get_cities(text)
         print(matches)
